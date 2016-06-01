@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45016718-A6F8-413B-B77F-3FFD74E9BEB5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Politico2</RootNamespace>
+    <AssemblyName>Politico2</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <MonoGameContentBuilderExe>
+    </MonoGameContentBuilderExe>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Windows\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Game1.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Menu\Game\MainGame.cs" />
+    <Compile Include="Menu\Game\MainMenu.cs" />
+    <Compile Include="Menu\Game\OptionsScreen.cs" />
+    <Compile Include="Menu\ScreenManager\GameScreen.cs" />
+    <Compile Include="Menu\ScreenManager\InputState.cs" />
+    <Compile Include="Menu\ScreenManager\ScreenManager.cs" />
+    <Compile Include="Menu\Screens\BackgroundScreen.cs" />
+    <Compile Include="Menu\Screens\ButtonEntry.cs" />
+    <Compile Include="Menu\Screens\CreditsScreen.cs" />
+    <Compile Include="Menu\Screens\MenuEntry.cs" />
+    <Compile Include="Menu\Screens\MenuScreen.cs" />
+    <Compile Include="Menu\Screens\MessageBoxScreen.cs" />
+    <Compile Include="Menu\Screens\OptionsMenuScreen.cs" />
+    <Compile Include="Menu\Screens\PlayerIndexEventArgs.cs" />
+    <Compile Include="Menu\Screens\SplashScreen.cs" />
+    <Compile Include="Politico\Animation.cs" />
+    <Compile Include="Politico\Assets.cs" />
+    <Compile Include="Politico\Camera.cs" />
+    <Compile Include="Politico\Cursor.cs" />
+    <Compile Include="Politico\Disasters\Alien.cs" />
+    <Compile Include="Politico\Disasters\Disaster.cs" />
+    <Compile Include="Politico\Disasters\DisasterManager.cs" />
+    <Compile Include="Politico\Disasters\Nuke.cs" />
+    <Compile Include="Politico\Disasters\Riot.cs" />
+    <Compile Include="Politico\Disasters\Storm.cs" />
+    <Compile Include="Politico\Disasters\War.cs" />
+    <Compile Include="Politico\Effects\CloudEffect.cs" />
+    <Compile Include="Politico\Effects\CoalStackEffect.cs" />
+    <Compile Include="Politico\Effects\DustEffect.cs" />
+    <Compile Include="Politico\Effects\Effect.cs" />
+    <Compile Include="Politico\Effects\EffectsManager.cs" />
+    <Compile Include="Politico\Effects\ExplosionEffect.cs" />
+    <Compile Include="Politico\Effects\FireEffect.cs" />
+    <Compile Include="Politico\Effects\Particles\CloudParticle.cs" />
+    <Compile Include="Politico\Effects\Particles\DustParticle.cs" />
+    <Compile Include="Politico\Effects\Particles\ExplosionParticle.cs" />
+    <Compile Include="Politico\Effects\Particles\FireParticle.cs" />
+    <Compile Include="Politico\Effects\Particles\Fract.cs" />
+    <Compile Include="Politico\Effects\FractEffect.cs" />
+    <Compile Include="Politico\Effects\Particles\Particle.cs" />
+    <Compile Include="Politico\Effects\Particles\RainParticle.cs" />
+    <Compile Include="Politico\Effects\Particles\SmokeParticle.cs" />
+    <Compile Include="Politico\Effects\RainEffect.cs" />
+    <Compile Include="Politico\Effects\Sun.cs" />
+    <Compile Include="Politico\Effects\Particles\SunParticle.cs" />
+    <Compile Include="Politico\Effects\WaterEffect.cs" />
+    <Compile Include="Politico\Effects\Particles\WaterParticle.cs" />
+    <Compile Include="Politico\Grid.cs" />
+    <Compile Include="Politico\GUI\BottomBar.cs" />
+    <Compile Include="Politico\GUI\Button.cs" />
+    <Compile Include="Politico\GUI\DisasterBar.cs" />
+    <Compile Include="Politico\GUI\GridBar.cs" />
+    <Compile Include="Politico\GUI\MainUserInterface.cs" />
+    <Compile Include="Politico\GUI\ConstructionBar.cs" />
+    <Compile Include="Politico\GUI\TitleBar.cs" />
+    <Compile Include="Politico\Night.cs" />
+    <Compile Include="Politico\PoliticoGame.cs" />
+    <Compile Include="Politico\Tiles\Apartment.cs" />
+    <Compile Include="Politico\Tiles\Capital.cs" />
+    <Compile Include="Politico\Tiles\Coal.cs" />
+    <Compile Include="Politico\Tiles\Condo.cs" />
+    <Compile Include="Politico\Tiles\CorpFactory.cs" />
+    <Compile Include="Politico\Tiles\Corporation.cs" />
+    <Compile Include="Politico\Tiles\FireStation.cs" />
+    <Compile Include="Politico\Tiles\Grass.cs" />
+    <Compile Include="Politico\Tiles\House.cs" />
+    <Compile Include="Politico\Tiles\PoliceStation.cs" />
+    <Compile Include="Politico\Tiles\PowerTile.cs" />
+    <Compile Include="Politico\Tiles\Road.cs" />
+    <Compile Include="Politico\Tiles\Tile.cs" />
+    <Compile Include="Politico\Tiles\Empty.cs" />
+    <Compile Include="Politico\Tiles\TileFactory.cs" />
+    <Compile Include="Politico\Tiles\Tree.cs" />
+    <Compile Include="Politico\Tiles\Water.cs" />
+    <Compile Include="Politico\Tiles\WindTurbine.cs" />
+    <Compile Include="Politico\TrafficSystem\Car.cs" />
+    <Compile Include="Politico\TrafficSystem\FireCopter.cs" />
+    <Compile Include="Politico\TrafficSystem\Helicopter.cs" />
+    <Compile Include="Politico\TrafficSystem\PoliceCopter.cs" />
+    <Compile Include="Politico\TrafficSystem\Traffic.cs" />
+    <Compile Include="Politico\TrafficSystem\Vehicle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.6.0.89, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Menu\Graphics\Title.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Menu\Fonts\LogInFont.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Menu\Graphics\play_button.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Game\Graphics\Tiles\grass.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Game\Graphics\base.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Game\Graphics\Tiles\capitol.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\flag_sheet.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_up_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_up_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_angle_topleft-bottomleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_angle_topright-bottomright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_cross.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_tri_bottomleft-topleft-topright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_tri_topleft-topright-bottomright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_angle_bottomright-bottomleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_angle_topright-topleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_tri_bottomright-bottomleft-topleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\road_tri_topright-bottomright-bottomleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\constructionbar_placeholder.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\hammer_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\titlebar_placeholder.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car_down_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car_down_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car_up_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car_up_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\house.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\trafficlight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\WindTurbine\windturbine_base.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\WindTurbine\windturbine_blade.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\WindTurbine\windturbine_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\night-background.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\factory_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\capital_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\house_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\bulldozer_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\coal_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\house_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\road_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\windturbine_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\background_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\corporation_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\factory_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp1_small.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp1_medium_bottom.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp1_medium_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp1_large_mid.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp1_large_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp1_medium_lights_bottom.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp1_medium_lights_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp1_small_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp2_medium_lights_bottom.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp2_medium_lights_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp2_small_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp2_large_mid.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp2_large_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp2_medium_bottom.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp2_medium_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp2_small.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp3_medium_lights_bottom.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp3_medium_lights_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Corporations\corp3_small_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp3_large_mid.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp3_large_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp3_medium_bottom.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp3_medium_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\corp3_small.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\CorpFactory\corpfactory1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\CorpFactory\corpfactory_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car2_down_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car2_down_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car2_up_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car2_up_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car3_down_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car3_down_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car3_up_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car3_up_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car4_down_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car4_down_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car4_up_left.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Cars\car4_up_right.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\apartment.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\apartment_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\apartment_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\condo_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Condo\condo_bottom.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Condo\condo_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Condo\condo_lights_bottom.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\Condo\condo_lights_top.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\cursor.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\firestation_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\policestation_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="app.config" />
+    <Content Include="Content\Game\Graphics\Tiles\firestation.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Lights\policefire_lights.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\policestation.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Helicopters\firecopter_downleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Helicopters\firecopter_downright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Helicopters\helicopter_shadow.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Helicopters\policecopter_downleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Vehicles\Helicopters\policecopter_downright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\grid_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\powergrid_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\firegrid_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\policegrid_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\coalfactory.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\fireparticle.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\disaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\riot.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\tree_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\water_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_angle_bottomright-bottomleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_angle_topleft-bottomleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_angle_topright-bottomright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_angle_topright-topleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_center.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_tri_bottomleft-topleft-topright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_tri_bottomright-bottomleft-topleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_tri_topleft-topright-bottomright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_tri_topright-bottomright-bottomleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\tree.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\shadow.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\capitol_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\grass_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\house_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\apartment_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\coalfactory_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Condo\Night\condo_bottom_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Condo\Night\condo_top_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\corpfactory1_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\firestation_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\policestation_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Night\tree_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_angle_bottomright-bottomleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_angle_topleft-bottomleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_angle_topright-bottomright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_angle_topright-topleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_cross_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_tri_bottomleft-topleft-topright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_tri_bottomright-bottomleft-topleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_tri_topleft-topright-bottomright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_tri_topright-bottomright-bottomleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_up_left_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\road_up_right_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_angle_bottomright-bottomleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_angle_topleft-bottomleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_angle_topright-bottomright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_angle_topright-topleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_center_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_tri_bottomleft-topleft-topright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_tri_bottomright-bottomleft-topleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_tri_topleft-topright-bottomright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_tri_topright-bottomright-bottomleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\WindTurbine\Night\windturbine_base_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\WindTurbine\Night\windturbine_top_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp1_small_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp2_small_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp3_small_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp1_medium_bottom_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp1_medium_top_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp2_medium_bottom_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp2_medium_top_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp3_medium_bottom_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp3_medium_top_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp1_large_mid_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp1_large_top_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp2_large_mid_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp2_large_top_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp3_large_mid_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Corporations\Night\corp3_large_top_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\base_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\sunparticle.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\moon.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\WindTurbine\Night\windturbine_blade_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\flag_sheet_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\firedisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\policedisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\explosion.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\earthquakedisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\meteordisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\helicopterdisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\smokeparticle.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\Night\smokeparticle_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\dust_particle.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\Night\dust_particle_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\alienattackdisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\nuclearattackdisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Other\missle.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Other\spaceship.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Other\lazerbeam.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\wardisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Other\jet.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Other\bomb.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Road\Night\trafficlight_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\Night\cloud_particle_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\cloud_particle.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\bottombar.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\messagefont.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\stormdisaster_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Particles\raindrop.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\options_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\GUI\Buttons\window_btn.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\menufont.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Menu\Graphics\menu_button_background.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_full.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_straight_bottomleft-topright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_straight_topleft-bottomright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_full_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_straight_bottomleft-topright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_straight_topleft-bottomright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_single_bottomleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_single_bottomright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_single_topleft_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\Night\water_single_topright_night.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_single_bottomleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_single_bottomright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_single_topleft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Tiles\Water\water_single_topright.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Other\stormBackground.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\creditsfont.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game\Graphics\Other\lightning.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="PolicitoMap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Sounds\Effects\" />
+    <Folder Include="Content\Sounds\Tracks\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
